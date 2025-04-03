@@ -1,3 +1,7 @@
+'use client';
+
+import Image from 'next/image';
+
 export default function HomePage() {
   return (
     <main className="bg-black text-white min-h-screen">
@@ -8,24 +12,26 @@ export default function HomePage() {
             Introducing Unprompted AI
           </span>
           <h1 className="text-5xl font-extrabold leading-tight mb-6">
-            The <span className="text-teal-400">Debugging AI</span> platform for developers
+            The
+            <span className="text-teal-400"> Debugging AI </span>
+            platform for developers
           </h1>
           <p className="text-lg text-gray-400 mb-8">
             Unprompted AI automatically detects, explains, and fixes bugs in your codebase. No stack traces. No prompting. Just answers.
           </p>
           <div className="flex gap-4">
-            <a
-              href="#"
+            <button
+              type="button"
               className="px-6 py-3 bg-white text-black font-medium rounded-lg hover:bg-gray-200"
             >
               Try For Free
-            </a>
-            <a
-              href="#"
+            </button>
+            <button
+              type="button"
               className="px-6 py-3 border border-gray-700 rounded-lg text-white hover:bg-gray-800"
             >
               View Pricing
-            </a>
+            </button>
           </div>
         </div>
 
@@ -48,10 +54,10 @@ apply(fix)`}
             Trusted by forward-thinking devs and early YC reviewers
           </h3>
           <div className="flex justify-center gap-10 opacity-60">
-            <img src="/logo1.svg" alt="logo1" className="h-6" />
-            <img src="/logo2.svg" alt="logo2" className="h-6" />
-            <img src="/logo3.svg" alt="logo3" className="h-6" />
-            <img src="/logo4.svg" alt="logo4" className="h-6" />
+            <Image src="/logo1.svg" alt="logo1" width={100} height={24} />
+            <Image src="/logo2.svg" alt="logo2" width={100} height={24} />
+            <Image src="/logo3.svg" alt="logo3" width={100} height={24} />
+            <Image src="/logo4.svg" alt="logo4" width={100} height={24} />
           </div>
         </div>
       </section>
@@ -68,7 +74,10 @@ apply(fix)`}
               placeholder="Paste your buggy code here..."
               className="w-full h-40 bg-black text-green-400 font-mono p-4 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
             ></textarea>
-            <button className="mt-6 px-6 py-3 bg-teal-500 text-black font-semibold rounded-lg hover:bg-teal-400">
+            <button
+              type="button"
+              className="mt-6 px-6 py-3 bg-teal-500 text-black font-semibold rounded-lg hover:bg-teal-400"
+            >
               Analyze Code
             </button>
           </div>
