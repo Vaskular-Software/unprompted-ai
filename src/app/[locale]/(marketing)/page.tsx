@@ -40,7 +40,7 @@ export default function HomePage() {
         {/* Right: Code Snippet or Image */}
         <div className="bg-gray-900 rounded-lg p-6 overflow-auto">
           <pre className="text-sm text-green-400">
-{`// unprompted-ai example
+            {`// unprompted-ai example
 const bug = stackTrace()
 const explanation = await debug(bug)
 const fix = await suggestFix(bug, explanation)
@@ -75,7 +75,7 @@ apply(fix)`}
             <textarea
               placeholder="Paste your buggy code here..."
               className="w-full h-40 bg-black text-green-400 font-mono p-4 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
-            />
+            ></textarea>
             <button
               type="button"
               className="mt-6 px-6 py-3 bg-teal-500 text-black font-semibold rounded-lg hover:bg-teal-400"
@@ -88,4 +88,3 @@ apply(fix)`}
     </main>
   );
 }
-
