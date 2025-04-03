@@ -1,5 +1,4 @@
-import { Sponsors } from '@/components/Sponsors';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { setRequestLocale } from 'next-intl/server';
 
 type IIndexProps = {
   params: Promise<{ locale: string }>;
@@ -7,124 +6,76 @@ type IIndexProps = {
 
 export async function generateMetadata(props: IIndexProps) {
   const { locale } = await props.params;
-  const t = await getTranslations({
-    locale,
-    namespace: 'Index',
-  });
 
   return {
-    title: t('meta_title'),
-    description: t('meta_description'),
+    title: 'Unprompted AI – The Debugging Engineer That Thinks for You',
+    description:
+      'Unprompted AI finds bugs, explains them, and gives you fixes—without any prompting. No pasting stack traces. No babysitting ChatGPT.',
   };
 }
 
 export default async function Index(props: IIndexProps) {
   const { locale } = await props.params;
   setRequestLocale(locale);
-  const t = await getTranslations({
-    locale,
-    namespace: 'Index',
-  });
 
   return (
-    <>
-      <p>
-        {`Follow `}
-        <a
-          className="text-blue-700 hover:border-b-2 hover:border-blue-700"
-          href="https://twitter.com/ixartz"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          @Ixartz on Twitter
-        </a>
-        {` for updates and more information about the boilerplate.`}
+    <main className="px-8 py-12 max-w-3xl mx-auto font-sans">
+      <h1 className="text-4xl font-bold text-gray-900 mb-4">
+        The Debugging Engineer That Thinks for You
+      </h1>
+      <p className="text-lg text-gray-700 mb-6">
+        AI coding tools make you explain what went wrong. Unprompted AI sees your bug, traces the root cause, and gives you the fix—no prompting required.
       </p>
-      <h2 className="mt-5 text-2xl font-bold">
-        Boilerplate Code for Your Next.js Project with Tailwind CSS
+      <a
+        href="#demo"
+        className="inline-block px-6 py-3 bg-black text-white font-semibold rounded-xl shadow-md hover:bg-gray-800"
+      >
+        Try the Live Debugger
+      </a>
+
+      <h2 className="text-2xl font-semibold text-gray-900 mb-4 mt-12">
+        Why Unprompted AI
       </h2>
-      <p className="text-base">
-        Next.js Boilerplate is a developer-friendly starter code for Next.js projects, built with Tailwind CSS and TypeScript.
-        {' '}
-        <span role="img" aria-label="zap">
-          ⚡️
-        </span>
-        {' '}
-        Designed with developer experience in mind, it includes:
-      </p>
-      <ul className="mt-3 text-base">
-        <li>🚀 Next.js with App Router support</li>
-        <li>🔥 TypeScript for type checking</li>
-        <li>💎 Tailwind CSS integration</li>
+      <ul className="text-gray-700 list-disc ml-6 space-y-3">
         <li>
-          🔒 Authentication with
-          {' '}
-          <a
-            className="font-bold text-blue-700 hover:border-b-2 hover:border-blue-700"
-            href="https://clerk.com?utm_source=github&amp;utm_medium=sponsorship&amp;utm_campaign=nextjs-boilerplate"
-          >
-            Clerk
-          </a>
-          {' '}
-          (includes passwordless, social, and multi-factor auth)
-        </li>
-        <li>📦 ORM with DrizzleORM (PostgreSQL, SQLite, MySQL support)</li>
-        <li>
-          🌐 Multi-language support (i18n) with next-intl and
-          {' '}
-          <a
-            className="font-bold text-blue-700 hover:border-b-2 hover:border-blue-700"
-            href="https://l.crowdin.com/next-js"
-          >
-            Crowdin
-          </a>
-        </li>
-        <li>🔴 Form handling (React Hook Form) and validation (Zod)</li>
-        <li>📏 Linting and formatting (ESLint, Prettier)</li>
-        <li>🦊 Git hooks and commit linting (Husky, Commitlint)</li>
-        <li>🦺 Testing suite (Vitest, React Testing Library, Playwright)</li>
-        <li>🎉 Storybook for UI development</li>
-        <li>
-          🐰 AI-powered code reviews with
-          {' '}
-          <a
-            className="font-bold text-blue-700 hover:border-b-2 hover:border-blue-700"
-            href="https://www.coderabbit.ai?utm_source=next_js_starter&utm_medium=github&utm_campaign=next_js_starter_oss_2025"
-          >
-            CodeRabbit
-          </a>
+          <strong>No prompting:</strong> We detect the bug and explain it—so you
+          don’t have to paste stack traces or describe the issue.
         </li>
         <li>
-          🚨 Error monitoring (
-          <a
-            className="font-bold text-blue-700 hover:border-b-2 hover:border-blue-700"
-            href="https://sentry.io/for/nextjs/?utm_source=github&amp;utm_medium=paid-community&amp;utm_campaign=general-fy25q1-nextjs&amp;utm_content=github-banner-nextjsboilerplate-logo"
-          >
-            Sentry
-          </a>
-          ) and logging (Pino.js)
+          <strong>Root-cause tracing:</strong> We find what actually broke, not
+          just what line threw the error.
         </li>
-        <li>🖥️ Monitoring as Code (Checkly)</li>
         <li>
-          🔐 Security and bot protection (
-          <a
-            className="font-bold text-blue-700 hover:border-b-2 hover:border-blue-700"
-            href="https://launch.arcjet.com/Q6eLbRE"
-          >
-            Arcjet
-          </a>
-          )
+          <strong>Context-aware suggestions:</strong> Our LLM sees your repo,
+          not just a snippet.
         </li>
-        <li>🤖 SEO optimization (metadata, JSON-LD, Open Graph tags)</li>
-        <li>⚙️ Development tools (VSCode config, bundler analyzer, changelog generation)</li>
+        <li>
+          <strong>Unit test generation:</strong> Stop regressions before they
+          start.
+        </li>
+        <li>
+          <strong>Plug-and-play:</strong> Works with your favorite IDE or
+          browser.
+        </li>
       </ul>
-      <p className="text-base">
-        Our sponsors&apos; exceptional support has made this project possible.
-        Their services integrate seamlessly with the boilerplate, and we
-        recommend trying them out.
+
+      <h3 className="text-xl font-medium text-gray-900 mt-16 mb-4" id="demo">
+        Stop prompting. Start debugging.
+      </h3>
+      <p className="text-gray-700 mb-6">
+        Join our early access list and try Unprompted AI in your editor or
+        browser today.
       </p>
-      <h2 className="mt-5 text-2xl font-bold">{t('sponsors_title')}</h2>
-      <Sponsors />
-    </>
+      <a
+        href="https://forms.gle/yourwaitlistlink"
+        className="inline-block px-5 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-500"
+      >
+        Join the Waitlist
+      </a>
+
+      <p className="text-sm text-gray-400 mt-20">
+        YC-backed. Built by developers who were tired of babysitting AI.
+      </p>
+    </main>
   );
-};
+}
