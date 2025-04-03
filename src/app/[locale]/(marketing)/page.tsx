@@ -13,8 +13,8 @@ export async function generateMetadata() {
 }
 
 export default async function Index(props: IIndexProps) {
-  await props.params; // Ignoring locale for now
-  setRequestLocale('en'); // Hardcoded default language
+  await props.params; // Not using locale right now
+  setRequestLocale('en'); // Hardcoded for now
 
   return (
     <main className="px-8 py-12 max-w-3xl mx-auto font-sans">
@@ -36,24 +36,24 @@ export default async function Index(props: IIndexProps) {
       </h2>
       <ul className="text-gray-700 list-disc ml-6 space-y-3">
         <li>
-          <strong>No prompting:</strong> We detect the bug and explain it—so you
-          don’t have to paste stack traces or describe the issue.
+          <strong>No prompting:</strong>{' '}
+          We detect the bug and explain it—so you don’t have to paste stack traces or describe the issue.
         </li>
         <li>
-          <strong>Root-cause tracing:</strong> We find what actually broke, not
-          just what line threw the error.
+          <strong>Root-cause tracing:</strong>{' '}
+          We find what actually broke, not just what line threw the error.
         </li>
         <li>
-          <strong>Context-aware suggestions:</strong> Our LLM sees your repo,
-          not just a snippet.
+          <strong>Context-aware suggestions:</strong>{' '}
+          Our LLM sees your repo, not just a snippet.
         </li>
         <li>
-          <strong>Unit test generation:</strong> Stop regressions before they
-          start.
+          <strong>Unit test generation:</strong>{' '}
+          Stop regressions before they start.
         </li>
         <li>
-          <strong>Plug-and-play:</strong> Works with your favorite IDE or
-          browser.
+          <strong>Plug-and-play:</strong>{' '}
+          Works with your favorite IDE or browser.
         </li>
       </ul>
 
@@ -61,8 +61,7 @@ export default async function Index(props: IIndexProps) {
         Stop prompting. Start debugging.
       </h3>
       <p className="text-gray-700 mb-6">
-        Join our early access list and try Unprompted AI in your editor or
-        browser today.
+        Join our early access list and try Unprompted AI in your editor or browser today.
       </p>
       <a
         href="https://forms.gle/yourwaitlistlink"
