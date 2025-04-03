@@ -40,7 +40,7 @@ export default function HomePage() {
         {/* Right: Code Snippet or Image */}
         <div className="bg-gray-900 rounded-lg p-6 overflow-auto">
           <pre className="text-sm text-green-400">
-{`// unprompted-ai example
+            {`// unprompted-ai example
 const bug = stackTrace()
 const explanation = await debug(bug)
 const fix = await suggestFix(bug, explanation)
