@@ -36,24 +36,39 @@ export default async function Index(props: IIndexProps) {
       </h2>
       <ul className="text-gray-700 list-disc ml-6 space-y-3">
         <li>
-          <strong>No prompting:</strong>{' '}
-          We detect the bug and explain it—so you don’t have to paste stack traces or describe the issue.
+          <strong>No prompting:</strong>
+          <span>
+            {' '}
+            We detect the bug and explain it—so you don’t have to paste stack traces or describe the issue.
+          </span>
         </li>
         <li>
-          <strong>Root-cause tracing:</strong>{' '}
-          We find what actually broke, not just what line threw the error.
+          <strong>Root-cause tracing:</strong>
+          <span>
+            {' '}
+            We find what actually broke, not just what line threw the error.
+          </span>
         </li>
         <li>
-          <strong>Context-aware suggestions:</strong>{' '}
-          Our LLM sees your repo, not just a snippet.
+          <strong>Context-aware suggestions:</strong>
+          <span>
+            {' '}
+            Our LLM sees your repo, not just a snippet.
+          </span>
         </li>
         <li>
-          <strong>Unit test generation:</strong>{' '}
-          Stop regressions before they start.
+          <strong>Unit test generation:</strong>
+          <span>
+            {' '}
+            Stop regressions before they start.
+          </span>
         </li>
         <li>
-          <strong>Plug-and-play:</strong>{' '}
-          Works with your favorite IDE or browser.
+          <strong>Plug-and-play:</strong>
+          <span>
+            {' '}
+            Works with your favorite IDE or browser.
+          </span>
         </li>
       </ul>
 
