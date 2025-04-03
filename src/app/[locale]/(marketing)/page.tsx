@@ -4,9 +4,7 @@ type IIndexProps = {
   params: Promise<{ locale: string }>;
 };
 
-export async function generateMetadata(props: IIndexProps) {
-  const { locale } = await props.params;
-
+export async function generateMetadata() {
   return {
     title: 'Unprompted AI – The Debugging Engineer That Thinks for You',
     description:
@@ -15,8 +13,8 @@ export async function generateMetadata(props: IIndexProps) {
 }
 
 export default async function Index(props: IIndexProps) {
-  const { locale } = await props.params;
-  setRequestLocale(locale);
+  await props.params; // Ignoring locale for now
+  setRequestLocale('en'); // Hardcoded default language
 
   return (
     <main className="px-8 py-12 max-w-3xl mx-auto font-sans">
