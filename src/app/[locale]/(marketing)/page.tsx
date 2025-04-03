@@ -12,9 +12,11 @@ export default function HomePage() {
             Introducing Unprompted AI
           </span>
           <h1 className="text-5xl font-extrabold leading-tight mb-6">
-            The
-            <span className="text-teal-400"> Debugging AI </span>
-            platform for developers
+            <span>The</span>
+            <br />
+            <span className="text-teal-400">Debugging AI</span>
+            <br />
+            <span>platform for developers</span>
           </h1>
           <p className="text-lg text-gray-400 mb-8">
             Unprompted AI automatically detects, explains, and fixes bugs in your codebase. No stack traces. No prompting. Just answers.
