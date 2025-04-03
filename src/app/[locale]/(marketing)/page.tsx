@@ -1,17 +1,18 @@
 'use client';
 
 import Image from 'next/image';
+import '@fontsource/inter/variable.css';
 
 export default function HomePage() {
   return (
-    <main className="bg-black text-white min-h-screen">
-      <div className="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <main className="bg-gradient-to-b from-black via-gray-900 to-black text-white min-h-screen font-sans">
+      <div className="max-w-screen-xl mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left: Hero Copy */}
         <div>
           <span className="inline-block px-4 py-1 mb-4 text-sm font-semibold bg-gray-900 rounded-full border border-gray-700">
             Introducing Unprompted AI
           </span>
-          <h1 className="text-5xl font-extrabold leading-tight mb-6">
+          <h1 className="text-6xl font-extrabold tracking-tight leading-tight mb-6">
             <span>The</span>
             <br />
             <span className="text-teal-400">Debugging AI</span>
@@ -24,34 +25,34 @@ export default function HomePage() {
           <div className="flex gap-4">
             <button
               type="button"
-              className="px-6 py-3 bg-white text-black font-medium rounded-lg hover:bg-gray-200"
+              className="px-6 py-3 bg-white text-black font-semibold rounded-md shadow hover:bg-gray-200 transition"
             >
               Try For Free
             </button>
             <button
               type="button"
-              className="px-6 py-3 border border-gray-700 rounded-lg text-white hover:bg-gray-800"
+              className="px-6 py-3 border border-gray-700 text-white rounded-md hover:bg-gray-800 transition"
             >
               View Pricing
             </button>
           </div>
         </div>
 
-        {/* Right: Code Snippet or Image */}
-        <div className="bg-gray-900 rounded-lg p-6 overflow-auto">
-          <pre className="text-sm text-green-400">
-            {`// unprompted-ai example
+        {/* Right: Code Snippet */}
+        <div className="bg-gray-900 rounded-lg p-6 shadow-lg border border-gray-800">
+          <div className="text-green-400 font-mono text-sm leading-relaxed whitespace-pre-wrap">
+{`// unprompted-ai example
 const bug = stackTrace()
 const explanation = await debug(bug)
 const fix = await suggestFix(bug, explanation)
 apply(fix)`}
-          </pre>
+          </div>
         </div>
       </div>
 
       {/* Logos */}
       <section className="border-t border-gray-800 py-12">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-screen-xl mx-auto px-6">
           <h3 className="text-center text-gray-400 text-sm mb-6">
             Trusted by forward-thinking devs and early YC reviewers
           </h3>
@@ -65,13 +66,13 @@ apply(fix)`}
       </section>
 
       {/* Playground */}
-      <section className="border-t border-gray-800 py-24 bg-black">
+      <section className="border-t border-gray-800 py-24">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-4">Try the Unprompted Debugger</h2>
           <p className="text-gray-400 mb-10">
             Paste your broken code and see how our AI detects and explains bugs without a single prompt.
           </p>
-          <div className="bg-gray-900 p-6 rounded-xl shadow-lg">
+          <div className="bg-gray-900 p-6 rounded-xl shadow-lg border border-gray-800">
             <textarea
               placeholder="Paste your buggy code here..."
               className="w-full h-40 bg-black text-green-400 font-mono p-4 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
